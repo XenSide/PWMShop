@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Shop</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="/assets/css/styleprodotto.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar custom-align">
+    <div class="container container-navbar">
+
+      <a class="navbar-brand" href="/shop">Shop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse custom-align" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <a class="nav-link disabled nome" href="#" tabindex="-1" aria-disabled="true">
+          <%= nome%>
+        </a>
+        <a href="/logout"><button class="btn btn-outline-danger my-2 my-sm-0">logout</button></a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 product-box">
+        <img src="<%= product.imgpath %>" alt="Immagine prodotto" class="img-fluid">
+      </div>
+      <div class="offset-1 col-5 product-box">
+        <h1>
+          <%= product.name %>
+        </h1>
+        <p class="description">
+          <%= product.description%>
+        </p>
+        <div class="price">
+          <% if(product.stock==0){ %>
+          <span class="badge badge-danger">Non disponibile</span>
+          <% } %><br>
+          <%= product.price%>
+        </div>
+        <% if(product.stock!=0){ %>
+        <button class="btn float-right" type="button">Acquista</button>
+        <% }else{%>
+        <button class="btn float-right disabled" type="button" disabled>Acquista</button>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="container reviewcontainer">
+    <div class="row">
+      <div class="col-2">
+        <h1 class="reviewH1">REVIEWS</h1>
+      </div>
+    </div>
+    <div class="row reviewrow">
+      <% if (reviews.length==0) { %>
+      <div class="col-4">
+        <span class="reviewBody" style="margin-top: 1vh;">Nessuna recensione disponibile</span>
+      </div>
+      <% } %>
+      <% let cont=0; %>
+      <% let length=reviews.length %>
+      <% let rows = Math.round(length/2) %>
+      <% reviews.forEach(function(review, index){ %>
+      <% let row=Math.round((cont+1)/2); %>
+      <div class="col-lg-6">
+        <div class="flex-container reviewbox" id="box<%= index %>">
+          <% cont++%>
+          <%if (rows==1) { //se esiste una sola riga%>
+          <script>
+            document.getElementById("box<%= index %>").classList.add("loner")
+          </script>
+          <% } %>
+          <% if (row==1) { //prima riga %>
+          <script>
+            document.getElementById("box<%= index%>").classList.add("upper")
+          </script>
+          <% }else if(row==rows){//ultima riga%>
+          <script>
+            document.getElementById("box<%= index%>").classList.add("lower")
+          </script>
+          <% }else if(rows-1==cont/2&&length%2!=0){//se siamo nell'ultimo elemento della penultima riga e il numero di elementi è dispari %>
+          <script>
+            document.getElementById("box<%= index %>").classList.add("lower")
+          </script>
+          <% } %>
+          <!-- Logica Scacchiera -->
+          <%if (row%2==cont%2){ %>
+          <script>
+            document.getElementById("box<%= index %>").classList.add("black")
+          </script>
+          <% }%>
+          <div class="UserInfo">
+            <div class="UserIcon">
+              <div class="UserLetter">
+                <%= review.username.charAt(0);%>
+              </div>
+            </div>
+            <span class="reviewName">
+              <%= review.username%>
+              <br>
+            </span>
+        </div>
+        <span class = "reviewTitle">
+          <%= review.titolo%>
+          <span class="reviewBody">
+            <%= review.corpo%>
+          </span>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+
+</html>

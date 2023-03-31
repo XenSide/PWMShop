@@ -1,0 +1,104 @@
+[
+    {
+        "idprodotto": "1",
+        "username": "Alice",
+        "titolo": "Semplicemente il miglior cacciavite che abbia mai avuto!",
+        "corpo": "Sono un'appassionata di tecnologia e non ho mai visto un cacciavite così resistente. È robusto e molto preciso, perfetto per tutti i lavori di precisione. Inoltre, la presa ergonomica lo rende molto comodo da utilizzare anche per periodi prolungati. Lo consiglio vivamente a chiunque abbia bisogno di un cacciavite di alta qualità."
+    },
+    {
+        "idprodotto": "1",
+        "username": "Bob",
+        "titolo": "Un prodotto di alta qualità",
+        "corpo": "Il prezzo è alto, ma ne vale la pena. Ho acquistato questo cacciavite per il mio lavoro e devo dire che sono molto soddisfatto della qualità e della precisione. La punta è molto resistente e non si deforma facilmente, il che lo rende perfetto per i lavori più impegnativi. Consiglio questo prodotto a chi cerca un cacciavite professionale."
+    },
+    {
+        "idprodotto": "1",
+        "username": "Charlie",
+        "titolo": "Impressionante!",
+        "corpo": "Sono rimasto sorpreso dalla qualità di questo cacciavite. È resistente, preciso e facile da usare. Inoltre, la sua presa ergonomica lo rende molto comodo da utilizzare anche per periodi prolungati. Non ho mai avuto un cacciavite così buono prima d'ora. Consiglio questo prodotto a chiunque cerchi un cacciavite di alta qualità per il lavoro o per i lavori di casa."
+    },
+    {
+        "idprodotto": "1",
+        "username": "David",
+        "titolo": "Un ottimo investimento",
+        "corpo": "Ho comprato questo cacciavite perché avevo bisogno di un prodotto di alta qualità per il mio lavoro. Sono rimasto molto soddisfatto della qualità del prodotto e della precisione della punta. Il prezzo potrebbe sembrare alto, ma ne vale la pena. Consiglio vivamente questo prodotto a chiunque abbia bisogno di un cacciavite affidabile e preciso."
+    },
+    {
+        "idprodotto": "1",
+        "username": "Emma",
+        "titolo": "Soddisfatta del mio acquisto",
+        "corpo": "Ho comprato questo cacciavite perché avevo bisogno di un prodotto di alta qualità per i miei lavori di casa. Sono rimasta molto soddisfatta della qualità del prodotto e della precisione della punta. La presa ergonomica rende facile l'utilizzo anche per periodi prolungati. Consiglio questo prodotto a chiunque abbia bisogno di un cacciavite resistente e preciso."
+    },
+    {
+        "idprodotto": "1",
+        "username": "Alice",
+        "titolo": "Ottimo prodotto, superato le mie aspettative",
+        "corpo": "Questo prodotto è fantastico. Lo consiglio vivamente. È stato facile da usare e ha superato le mie aspettative."
+    },
+    {
+        "idprodotto": "1",
+        "username": "Bob",
+        "titolo": "Niente di speciale, potrebbe essere migliorato",
+        "corpo": "Questo prodotto è mediocre. Non lo comprerei di nuovo."
+    },
+    {
+        "idprodotto": "1",
+        "username": "Charlie",
+        "titolo": "Miglioramento significativo grazie a questo prodotto",
+        "corpo": "Questo prodotto è ottimo. Lo consiglio vivamente. L'ho usato per un po' di tempo e ho notato un miglioramento significativo nei miei risultati."
+    },
+    {
+        "idprodotto": "2",
+        "username": "Jennifer",
+        "titolo": "Miglioramento evidente rispetto alle vecchie punte",
+        "corpo": "Ho acquistato il set di teste di ricambio per il mio LinusTechTips Screwdriver e devo dire che ne sono molto soddisfatta. La qualità delle punte è notevolmente migliore rispetto alle vecchie punte che avevo. Inoltre, la scelta delle dimensioni dei punte è molto ampia e mi ha permesso di affrontare una vasta gamma di lavori di precisione."
+    },
+    {
+        "idprodotto": "2",
+        "username": "Mark",
+        "titolo": "Impressioni dopo un mese di utilizzo",
+        "corpo": "Sono molto contento del set di teste di ricambio per il mio cacciavite LinusTechTips. Uso questo set da un mese e devo dire che mi ha sorpreso la resistenza delle punte, che rimangono affilate anche dopo un uso intenso. Inoltre, la scelta delle dimensioni dei punte è completa e soddisfa tutte le mie esigenze."
+    },
+    {
+        "idprodotto": "2",
+        "username": "Emily",
+        "titolo": "Set di ricambio perfetto per il mio lavoro",
+        "corpo": "Ho acquistato il set di teste di ricambio per il mio LinusTechTips Screwdriver e sono rimasta molto soddisfatta. Utilizzo il cacciavite per lavoro e mi serve un set di punte affidabile e resistente. Questo set risponde alle mie esigenze e mi permette di lavorare in modo efficiente e preciso."
+    },
+    {
+        "idprodotto": "3",
+        "username": "Michael",
+        "titolo": "Un powerbank eccezionale",
+        "corpo": "Ho acquistato il powerbank Anker per la mia recente vacanza e ne sono rimasto molto soddisfatto. La batteria è durata per tutto il viaggio e mi ha permesso di tenere il mio telefono e il mio tablet carichi durante il giorno. Inoltre, la velocità di ricarica è notevole e ho potuto utilizzare il powerbank per ricaricare altri dispositivi come le cuffie wireless."
+    },
+    {
+        "idprodotto": "3",
+        "username": "Sophia",
+        "titolo": "Un powerbank affidabile per il mio lavoro",
+        "corpo": "Ho acquistato il powerbank Anker per lavoro e devo dire che è stato una scelta molto azzeccata. La batteria dura molto a lungo e la velocità di ricarica è notevole. Inoltre, le dimensioni compatte e il peso ridotto lo rendono facile da trasportare ovunque. Sono molto soddisfatta di questo prodotto."
+    },
+    {
+        "idprodotto": "3",
+        "username": "Daniel",
+        "titolo": "Un powerbank di alta qualità",
+        "corpo": "Il powerbank Anker è un prodotto di alta qualità. Lo utilizzo per il mio laptop e devo dire che la batteria dura molto a lungo. Inoltre, la velocità di ricarica è notevole e ho potuto utilizzarlo per ricaricare altri dispositivi come il mio telefono e il mio tablet. Consiglio vivamente questo prodotto a chiunque cerchi un powerbank affidabile e di alta qualità."
+    },
+    {
+        "idprodotto": "4",
+        "username": "Jessica",
+        "titolo": "Il caricabatterie più comodo che abbia mai avuto",
+        "corpo": "Ho acquistato il caricabatterie MagSafe e devo dire che è il caricabatterie più comodo che abbia mai avuto. La sua magnetizzazione perfetta lo fa aderire saldamente al mio iPhone 12 Pro e mi permette di ricaricarlo senza dovermi preoccupare di tenerlo in posizione. Inoltre, la velocità di ricarica è molto elevata e in pochi minuti riesco a ricaricare la batteria del mio telefono."
+    },
+    {
+        "idprodotto": "4",
+        "username": "Alessandro",
+        "titolo": "Un accessorio essenziale per il mio iPhone",
+        "corpo": "Il caricabatterie MagSafe è diventato un accessorio essenziale per il mio iPhone 14. Lo utilizzo sia a casa che in ufficio e mi permette di tenere il mio telefono sempre carico senza dovermi preoccupare di cavi o prese. Inoltre, la sua velocità di ricarica è notevole e riesco a ricaricare il mio iPhone in un tempo molto breve."
+    },
+    {
+        "idprodotto": "4",
+        "username": "Julia",
+        "titolo": "Il miglior caricabatterie wireless sul mercato",
+        "corpo": "Il caricabatterie MagSafe è il miglior caricabatterie wireless sul mercato. La sua magnetizzazione perfetta lo fa aderire saldamente al mio iPhone 13 e mi permette di ricaricarlo senza problemi. Inoltre, la sua velocità di ricarica è molto elevata e in poco tempo riesco a ricaricare completamente la batteria del mio telefono. Consiglio vivamente questo prodotto a chiunque cerchi un caricabatterie wireless di alta qualità."
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Test",
+        "email": "test@test.test",
+        "password": "test"
+    },
+    {
+        "username": "Testina",
+        "email": "testina@testina.tstina",
+        "password": "123"
+    },
+    {
+        "username": "Riccardo",
+        "email": "riccardo.sciacca@gmail.com",
+        "password": "antoninogayass"
+    },
+    {
+        "username": "123",
+        "email": "123",
+        "password": "123"
+    },
+    {
+        "username": "pppp",
+        "email": "prova@p.p",
+        "password": "ppp"
+    },
+    {
+        "username": "Shailene",
+        "email": "marta.bellina23@gmail.com",
+        "password": "123"
+    }
+]

@@ -1,0 +1,94 @@
+[
+    {
+        "id": 1,
+        "stock": 1,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "LinusTechTips Screwdriver",
+        "description": "The official LinusTechTips Screwdriver.  Made from the finest materials and assembled by the best workers in the world. This is the only Screwdriver you will ever need.  Guaranteed to last a lifetime or your money back.  Made in the USA.",
+        "price": "$76.00",
+        "sku": "LTTScrewdriver"
+
+    },
+
+    {
+        "id": 2,
+        "stock": 1,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "Screwdriver Extra Tips",
+        "description": "Extra tips for the LinusTechTips Screwdriver",
+        "price": "$8.00",
+        "sku": "LTTTips"
+    },
+    {
+        "id": 3,
+        "stock": 0,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "Anker 733 Power Bank (GaNPrime PowerCore 65W)",
+        "description": "2-in-1 Charger: Enjoy the best of both worlds with a hybrid 65W wall charger and 10,000mAh portable charger in one. Power for 3: With 2 USB-C ports and 1 USB-A port, you can easily charge up to 3 devices at once. Powered by GaNPrime™: The portable charger is equipped with Anker's most advanced GaN-powered charging system, an innovative stacked design, PowerIQ™ 3.0 for higher efficiency, and ActiveShield™ 2.0 for intelligent temperature monitoring. Wide Compatibility: Works flawlessly with a wide range of devices including phones, tablets, laptops, and more. What You Get: Anker 733 Power Bank (GaNPrime PowerCore 65W), welcome guide, 24-month stress-free warranty, and friendly customer service.",
+        "price": "$99.99",
+        "sku": "Anker733"
+    },
+    {
+        "id": 4,
+        "stock": 1,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "MagSafe Charger",
+        "description": "The MagSafe Charger makes wireless charging a snap. The perfectly aligned magnets attach to your iPhone 14, iPhone 14 Pro, iPhone 13, iPhone 13 Pro, iPhone 12, and iPhone 12 Pro and provide faster wireless charging up to 15W.",
+        "price": "$39.00",
+        "sku": "MagSafe"
+    },
+    {
+        "id": 5,
+        "stock": 1,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "Screwdriver Extra Tips",
+        "description": "Extra tips for the LinusTechTips Screwdriver",
+        "price": "$8.00",
+        "sku": "LTTTips"
+    },
+    {
+        "id": 6,
+        "stock": 1,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "Screwdriver Extra Tips",
+        "description": "Extra tips for the LinusTechTips Screwdriver",
+        "price": "$8.00",
+        "sku": "LTTTips"
+    },
+    {
+        "id": 7,
+        "stock": 1,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "Screwdriver Extra Tips",
+        "description": "Extra tips for the LinusTechTips Screwdriver",
+        "price": "$8.00",
+        "sku": "LTTTips"
+    },
+    {
+        "id": 8,
+        "stock": 1,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "Screwdriver Extra Tips",
+        "description": "Extra",
+        "price": "$8.00",
+        "sku": "LTTTips"
+    },
+    {
+        "id": 9,
+        "stock": 0,
+        "imgpath": "https://picsum.photos/526/526",
+        "smallimgpath": "https://picsum.photos/248/200",
+        "name": "Screwdriver Extra Tips",
+        "description": "Extra",
+        "price": "$8.00",
+        "sku": "LTTTips"
+    }
+]
