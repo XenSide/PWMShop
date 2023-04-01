@@ -100,5 +100,24 @@
         "username": "Julia",
         "titolo": "Il miglior caricabatterie wireless sul mercato",
         "corpo": "Il caricabatterie MagSafe è il miglior caricabatterie wireless sul mercato. La sua magnetizzazione perfetta lo fa aderire saldamente al mio iPhone 13 e mi permette di ricaricarlo senza problemi. Inoltre, la sua velocità di ricarica è molto elevata e in poco tempo riesco a ricaricare completamente la batteria del mio telefono. Consiglio vivamente questo prodotto a chiunque cerchi un caricabatterie wireless di alta qualità."
+    },
+    {
+        "idprodotto": "5",
+        "username": "Liam",
+        "titolo": "Un prodotto di alta qualità",
+        "corpo": "Ho recentemente acquistato le punte extra per il cacciavite LinusTechTips e sono molto soddisfatto del mio acquisto. Le punte si adattano perfettamente al cacciavite e mi hanno permesso di svolgere una vasta gamma di lavori con facilità. Il prezzo è ragionevole e la qualità del prodotto è eccellente. Consiglio vivamente questo prodotto a chiunque possieda il cacciavite LinusTechTips."
+    },
+    {
+        "idprodotto": "6",
+        "username": "Marco",
+        "titolo": "Ottimo acquisto!",
+        "corpo": "Ho recentemente acquistato le punte extra per il cacciavite LinusTechTips e sono molto soddisfatto del mio acquisto. Le punte si adattano perfettamente al cacciavite e mi hanno permesso di svolgere una vasta gamma di lavori con facilità. Il prezzo è ragionevole e la qualità del prodotto è eccellente. Consiglio vivamente questo prodotto a chiunque possieda il cacciavite LinusTechTips."
+    },
+    {
+        "idprodotto": "6",
+        "username": "Giulia",
+        "titolo": "Un'aggiunta utile al mio cacciavite LinusTechTips",
+        "corpo": "Le punte extra per il cacciavite LinusTechTips si sono rivelate un'ottima aggiunta al mio kit di attrezzi. Sono di alta qualità e si adattano perfettamente al cacciavite. Mi hanno permesso di svolgere una vasta gamma di lavori con facilità e precisione. Il prezzo è ragionevole e la qualità del prodotto è eccellente. Consiglio vivamente questo prodotto a chiunque possieda il cacciavite LinusTechTips."
     }
+
 ]
