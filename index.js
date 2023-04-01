@@ -27,4 +27,9 @@ app.use('/signup', signup)
 app.use('/shop', shop)
 app.use('/logout', logout)
 
-app.listen(3000)
+// let port = process.env.PORT || 3000
+// let hostname = process.env.HOSTNAME || 'localhost'
+let port = 80
+let hostname =  '0.0.0.0'
+app.listen(port, hostname)
+console.log(`Server running at http://${hostname === '0.0.0.0' ? 'omnixen.ddns.net' : hostname}:${port}/`);
