@@ -5,11 +5,9 @@ let auth = require('../middlewares/auth');
 let { products, reviews, savedb } = require('../utils/db.js');
 
 router.get('/', auth, (req, res) => {
-    res.status(200).render('newshop.ejs', { nome: req.session.userid, products: products })
-});
-router.get('/old', auth, (req, res) => {
     res.status(200).render('shop.ejs', { nome: req.session.userid, products: products })
 });
+
 router.get('/:id', auth, (req, res) => {
     const { id } = req.params
     product = products.find(product => product.id === Number(id))
