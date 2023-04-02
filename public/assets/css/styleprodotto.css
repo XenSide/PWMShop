@@ -1,5 +1,6 @@
        * {
            font-family: 'Montserrat', sans-serif;
+           caret-color: transparent;
        }
 
        .body {
@@ -21,6 +22,7 @@
            /* height: calc(100vh - var(--navbarHeight)); */
            /* height: 100vh; */
            padding-top: 5vh;
+           overflow-wrap: break-word;
        }
 
        .container-navbar {
@@ -31,16 +33,27 @@
            margin-top: 7vh;
        }
 
-       .product-box button {
+       .productname {
+           font-size: 2em;
+           font-weight: bold;
+           color: #212529;
+           overflow-wrap: break-word;
+       }
+
+       .custombutton {
            background-color: white;
            color: #212529;
            border: solid 2px #212529;
        }
 
-       .product-box button:hover {
+       .custombutton:hover {
            background-color: #212529;
            color: white;
            border: solid 2px #212529;
+       }
+
+       .bg-dark {
+           background-color: #212529 !important;
        }
 
        .product-box .disabled {
@@ -54,6 +67,7 @@
            margin-top: 3vh;
            font-size: 2em;
            font-weight: bold;
+           color: #212529;
        }
 
        .description {
@@ -102,6 +116,7 @@
        }
 
        .reviewBody {
+           overflow-wrap: anywhere;
            display: flex;
            font-size: 0.8em;
            font-weight: 400;
@@ -189,9 +204,10 @@
        }
 
        .reviewbox {
+           overflow: hidden;
            display: flex;
            flex-direction: column;
-           padding: 4vh 7vh 8vh 7vh;
+           padding: 4vh 7vh 4vh 7vh;
            border: solid 2px #212529;
            margin: 0;
            min-height: 250px;
@@ -230,7 +246,8 @@
        }
 
        .writereviewbox {
-           margin-top: 15vh;
+           overflow-wrap: break-word;
+           /* margin-top: 15vh; */
            display: flex;
            padding-top: 4vh;
            padding-bottom: 8vh;
@@ -238,6 +255,7 @@
            min-height: 250px;
            border-radius: 1vh;
            margin-bottom: 10vh;
+           flex-wrap: wrap;
        }
 
        .writereviewtext {
@@ -267,12 +285,74 @@
            margin-top: 2vh;
        }
 
-       .writereviewform input {
+       .writereviewform .title {
            width: 100%;
+           padding-left: 1vh;
+           border: 0;
+           background-color: #D9D9D9;
        }
 
-       .writereviewform .mainbody {
-           height: 90%;
+       .reviewform {
+           display: flex;
+           flex-flow: column;
+
+       }
+
+       .tostext {
+           margin-left: 1vh;
+           font-size: 0.9em;
+       }
+
+       .flex-end {
+           align-self: flex-end;
+       }
+
+       .submitreviewbtn {
+           margin-top: 2vh;
+           width: 15vh;
+           height: 5vh;
+       }
+
+       .checkboxflex {
+           display: inline-flex;
+           flex-wrap: wrap;
+           margin-top: 1vh;
+       }
+
+       .checkboxflex>* {
+           align-self: baseline;
+       }
+
+
+       .writereviewform textarea {
+           margin-top: 2vh;
+           height: 15vh;
+           padding-bottom: 11vh;
+           flex-wrap: wrap;
+           width: 100%;
+           height: 15vh;
+           padding: 1vh;
+           border: 0;
+           background-color: #D9D9D9;
+       }
+
+       ::placeholder {
+           /* Chrome, Firefox, Opera, Safari 10.1+ */
+           color: rgb(75, 75, 75);
+           opacity: 1;
+           /* Firefox */
+       }
+
+       :-ms-input-placeholder {
+           /* Internet Explorer 10-11 */
+           color: rgb(75, 75, 75);
+           ;
+       }
+
+       ::-ms-input-placeholder {
+           /* Microsoft Edge */
+           color: rgb(75, 75, 75);
+           ;
        }
 
        .writereviewform h1 {
@@ -294,3 +374,13 @@
        .writereviewformuser a:hover {
            text-decoration: none;
        }
+
+       input {
+           caret-color: black;
+       }
+
+       textarea {
+           caret-color: black;
+       }
+
+       .imgcontainer {}
