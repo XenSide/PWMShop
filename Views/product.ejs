@@ -5,40 +5,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Shop</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/styleprodotto.css">
   <link rel="stylesheet" href="/assets/css/mediaqueries.css">
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar custom-align">
-    <div class="container container-navbar">
-
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark"  data-bs-theme="dark">
+    <div class="container-fluid">
       <a class="navbar-brand" href="/shop">Shop</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse custom-align" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <a class="nav-link disabled nome" href="#" tabindex="-1" aria-disabled="true">
-          <%= nome%>
-        </a>
-        <a href="/logout"><button class="btn btn-outline-danger my-2 my-sm-0">logout</button></a>
+        <form class="d-flex">
+          <div class="nome"><%= nome %></div>
+          <button class="btn btn-outline-danger" type="submit">Logout</button>
+        </form>
       </div>
     </div>
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 product-box">
+      <div class="offset-lg-1 col-lg-4 product-box">
         <div class="imgcontainer">
           <img src="<%= product.imgpath %>" alt="Immagine prodotto" class="img-fluid">
         </div>
       </div>
-      <div class="offset-1 col-5 product-box">
+      <div class="offset-lg-1 col-lg-5 product-box">
         <div class="productname">
           <%= product.name %>
         </div>
@@ -52,22 +44,22 @@
           <%= product.price%>
         </div>
         <% if(product.stock!=0){ %>
-        <button class="btn custombutton float-right" type="button">Acquista</button>
+        <button class="btn custombutton float-end" type="button">Acquista</button>
         <% }else{%>
-        <button class="btn custombutton float-right disabled" type="button" disabled>Acquista</button>
+        <button class="btn custombutton float-end disabled" type="button" disabled>Acquista</button>
         <% } %>
       </div>
     </div>
   </div>
   <div class="container reviewcontainer">
     <div class="row">
-      <div class="col-lg-2">
+      <div class="offset-lg-1 col-lg-4">
         <h1 class="reviewH1" id="reviews">REVIEWS</h1>
       </div>
     </div>
     <div class="row reviewrow">
       <% if (reviews.length==0) { %>
-      <div class="col-lg-4">
+      <div class="offset-lg-1 col-lg-5">
         <span>Nessuna recensione disponibile</span>
       </div>
       <% } %>
@@ -91,7 +83,11 @@
         }
       }
       %>
-      <div class="col-lg-6">
+      <% if(cont%2==1) {%>
+        <div class="offset-lg-1 col-lg-5">
+          <% }else{ %>
+            <div class="col-lg-5">
+          <% } %>
         <!-- In questa riga vengono assegnate dinamicamente upper, lower e black in base ad alcune condizioni  -->
         <div class="flex-container reviewbox <%= (row==1) ? 'upper' : ''%> <%= isLowerClass(row, rows, length, cont) %> <%= (row%2==cont%2) ? "black" : ""%>" id="box<%= index %>">
           <!---->
@@ -120,13 +116,13 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="offset-lg-1 col-lg-10 col-md-12">
         <div class="writereviewbox">
-          <div class="offset-lg-1 col-lg-4 writereviewtext">
+          <div class="offset-1 col-10 offset-lg-1 offset-md-1 offset-sm-1 col-md-5 col-sm-10 col-lg-4 writereviewtext">
             <h1>SCRIVI UNA RECENSIONE</h1>
-            <p>Lasciare una recensione aiuta gli altri clienti a prendere decisioni informate sui loro acquisti. Condividendo le tue esperienze oneste con il prodotto o il servizio, puoi fornire preziose informazioni che possono aiutare gli altri a fare la scelta giusta. Le recensioni aiutano anche le aziende a migliorare le loro offerte e il servizio clienti. Quindi, condividi i tuoi pensieri e aiuta gli altri a prendere la migliore decisione per le loro esigenze.</p>
+            <p>Lasciare una recensione aiuta gli altri clienti a prendere decisioni informate sui loro acquisti. Condividendo le tue esperienze oneste con il prodotto o il servizio, puoi fornire preziose informazioni che possono aiutare gli altri a fare la scelta giusta. Le recensioni aiutano anche le aziende a migliorare le loro offerte e il servizio clienti. Quindi, condividi i tuoi pensieri e aiuta gli altri a prendere la migliore decisione per le loro esigenze.<br><br>In altre parole, quando lasci una recensione, non solo stai aiutando gli altri clienti a fare scelte migliori ma anche aiutando le aziende a migliorare i loro prodotti.</p>
           </div>
-          <div class="offset-lg-1 col-lg-5 writereviewform">
+          <div class="offset-lg-1 offset-1 offset-sm-1 col-10 col-sm-10 col-lg-5 writereviewform">
             <div class="writereviewformuser d-flex justify-content-between">
               <h1><%= nome %></h1>
               <p class="">Non sei tu?<a href="/logout"> Effettua il logout.</a></p>
