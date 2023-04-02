@@ -1,5 +1,8 @@
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .btn{
+        transform: scale(0.8);
+    }
     .productCard {
         height: 70vh;
     }
