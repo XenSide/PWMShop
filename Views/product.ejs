@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Shop</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/styleprodotto.css">
@@ -66,6 +67,9 @@
       <% let cont=0; %>
       <% let length=reviews.length %>
       <% let rows = Math.round(length/2) %>
+      <script>
+        var maxheigth = 0
+      </script>
       <% reviews.forEach(function(review, index){ %>
       <% cont++%>
       <% let row=Math.round((cont)/2); %>
@@ -88,8 +92,8 @@
           <% }else{ %>
             <div class="col-lg-5">
           <% } %>
-        <!-- In questa riga vengono assegnate dinamicamente upper, lower e black in base ad alcune condizioni  -->
-        <div class="flex-container reviewbox <%= (row==1) ? 'upper' : ''%> <%= isLowerClass(row, rows, length, cont) %> <%= (row%2==cont%2) ? "black" : ""%>" id="box<%= index %>">
+          <!-- In queste righe vengono assegnate dinamicamente upper, lower e black in base ad alcune condizioni  -->
+          <div class="flex-container reviewbox d-none d-lg-block <%= (row==1) ? 'upper' : ''%> <%= isLowerClass(row, rows, length, cont) %> <%= (row%2==cont%2) ? "black" : ""%>" id="box<%= index %>">
           <!---->
           <div class="UserInfo">
             <div class="UserIcon">
@@ -105,13 +109,56 @@
           <span class="reviewTitle">
             <%= review.titolo%>
             <span class="reviewBody">
-              <% if(review.corpo.length > 25) { %>
-              <%= review.corpo.substring(0,301)%>
-              <% } %>
+                <%= review.corpo%>
+              </span>
+          </div>
+          <div class="flex-container reviewbox d-lg-none ms-auto <%= (cont==1) ? 'upper' : ''%> <%= (cont==length) ? "lower" : ""%> <%= (cont%2==0) ? "black" : ""%>" id="boxsm<%= index %>">
+            <!---->
+            <div class="UserInfo">
+              <div class="UserIcon">
+                <div class="UserLetter">
+                  <%= review.username.charAt(0);%>
+                </div>
+              </div>
+              <span class="reviewName">
+                <%= review.username%>
+                <br>
             </span>
         </div>
+            <span class="reviewTitle">
+              <%= review.titolo%>
+              <span class="reviewBody">
+                <%= review.corpo%>
+              </span>
+          </div>
+          <script>
+            function heightgetter(index) {
+              console.log("running heightgetter", "maxheigth", maxheigth, `box${index}:`, $(`#box${index}`).outerHeight())
+              var thisboxheight = $(`#box${index}`).outerHeight()
+              if (maxheigth < thisboxheight)
+                maxheigth = thisboxheight
+            }
+            $(document).ready(function() {
+              heightgetter("<%= index %>")
+            });
+            $(window).on('resize', function() {
+              heightgetter("<%= index %>")
+            });
+          </script>
       </div>
       <% }); %>
+        <% reviews.forEach((review, index)=>{ %>
+        <script>
+          $(document).ready(function() {
+            $("#box<%= index %>").css("min-height", maxheigth)
+            console.log("resizing <%= index %> to ", maxheigth, "px")
+          });
+          $(window).on('resize', function() {
+            $("#box<%= index %>").css("min-height", maxheigth)
+            console.log("resizing <%= index %> to ", maxheigth, "px")
+          });
+        </script>
+        <% }) %>
     </div>
   </div>
   <div class="container">
