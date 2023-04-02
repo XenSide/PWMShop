@@ -116,7 +116,7 @@
        }
 
        .reviewBody {
-           overflow-wrap: anywhere;
+           overflow-wrap: break-word;
            display: flex;
            font-size: 0.8em;
            font-weight: 400;
@@ -141,10 +141,10 @@
        .navbar .btn{
         align-self: baseline;
        }
-
-       .container-fluid {
-           width: 80%;
+       .navbar .d-flex{
+        flex-wrap: wrap;
        }
+
 
        .productCard {
            position: relative;
@@ -216,7 +216,7 @@
            border: solid 2px #212529;
            margin: 0;
            min-height: 250px;
-           height: 35vh;
+           /* height: 35vh; */
        }
 
        .upper {
@@ -388,4 +388,7 @@
            caret-color: black;
        }
 
-       .imgcontainer {}
+       .imgplaceholder {
+        width: 526px;
+        height: 526px;
+       }
