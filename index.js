@@ -5,6 +5,8 @@ const session = require('express-session')
 var FileStore = require('session-file-store')(session);
 const path = require('path')
 
+app.disable('x-powered-by');
+
 app.use(session({
     secret: "IlCorpoNazionaleDeiVigiliDelFuocoSalviamLaVitaAgliAltriIlRestoContaPocoIlPompierePauraNonNeHa",
     saveUninitialized: true,
@@ -13,9 +15,10 @@ app.use(session({
     store: new FileStore(),
 }))
 
-app.use(express('www', { cacheControl: true, setHeaders: function(res, path) { 
-    res.setHeader("Cache-Control","max-age=0,must-revalidate");  
-} }));
+app.use(function (req, res, next) {
+    res.setHeader("Cache-Control",`max-age=${oneday},immutable`);
+    next()  
+})
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
