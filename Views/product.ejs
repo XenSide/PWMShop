@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="/assets/css/styleprodotto.css">
+  <link rel="stylesheet" href="/assets/css/mediaqueries.css">
 
 </head>
 
@@ -32,13 +33,15 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-6 product-box">
-        <img src="<%= product.imgpath %>" alt="Immagine prodotto" class="img-fluid">
+      <div class="col-lg-6 product-box">
+        <div class="imgcontainer">
+          <img src="<%= product.imgpath %>" alt="Immagine prodotto" class="img-fluid">
+        </div>
       </div>
       <div class="offset-1 col-5 product-box">
-        <h1>
+        <div class="productname">
           <%= product.name %>
-        </h1>
+        </div>
         <p class="description">
           <%= product.description%>
         </p>
@@ -49,22 +52,22 @@
           <%= product.price%>
         </div>
         <% if(product.stock!=0){ %>
-        <button class="btn float-right" type="button">Acquista</button>
+        <button class="btn custombutton float-right" type="button">Acquista</button>
         <% }else{%>
-        <button class="btn float-right disabled" type="button" disabled>Acquista</button>
+        <button class="btn custombutton float-right disabled" type="button" disabled>Acquista</button>
         <% } %>
       </div>
     </div>
   </div>
   <div class="container reviewcontainer">
     <div class="row">
-      <div class="col-2">
-        <h1 class="reviewH1">REVIEWS</h1>
+      <div class="col-lg-2">
+        <h1 class="reviewH1" id="reviews">REVIEWS</h1>
       </div>
     </div>
     <div class="row reviewrow">
       <% if (reviews.length==0) { %>
-      <div class="col-4">
+      <div class="col-lg-4">
         <span>Nessuna recensione disponibile</span>
       </div>
       <% } %>
@@ -106,7 +109,9 @@
           <span class="reviewTitle">
             <%= review.titolo%>
             <span class="reviewBody">
-              <%= review.corpo%>
+              <% if(review.corpo.length > 25) { %>
+              <%= review.corpo.substring(0,301)%>
+              <% } %>
             </span>
         </div>
       </div>
@@ -117,18 +122,25 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="writereviewbox">
-          <div class="offset-1 col-lg-4 writereviewtext">
+          <div class="offset-lg-1 col-lg-4 writereviewtext">
             <h1>SCRIVI UNA RECENSIONE</h1>
             <p>Lasciare una recensione aiuta gli altri clienti a prendere decisioni informate sui loro acquisti. Condividendo le tue esperienze oneste con il prodotto o il servizio, puoi fornire preziose informazioni che possono aiutare gli altri a fare la scelta giusta. Le recensioni aiutano anche le aziende a migliorare le loro offerte e il servizio clienti. Quindi, condividi i tuoi pensieri e aiuta gli altri a prendere la migliore decisione per le loro esigenze.</p>
           </div>
-          <div class="offset-1 col-lg-5 writereviewform">
+          <div class="offset-lg-1 col-lg-5 writereviewform">
             <div class="writereviewformuser d-flex justify-content-between">
-              <h1>$NOMEUTENTE$</h1>
+              <h1><%= nome %></h1>
               <p class="">Non sei tu?<a href="/logout"> Effettua il logout.</a></p>
             </div>
-            <form action="/shop/review/add" method="post">
-              <input type="text" id="title" name="title" placeholder="Titolo Recensione"><br>
-              <input class="mainbody" type="text" id="body" name="body" placeholder="Scrivi qui la tua recensione"><br>
+            <form action="/shop/review/add" method="post" class="reviewform">
+              <input type="hidden" name="idprodotto" value="<%= product.id %>" required>
+              <input type="hidden" name="username" value="<%= nome %>" required>
+              <input class="title" type="text" id="titolo" name="titolo" placeholder="Dai un titolo alla tua recensione" required>
+              <textarea name="corpo" id="corpo" placeholder="Scrivi qui la tua recensione, ricorda di essere cortese!" maxlength="301" required></textarea>
+              <div class="flex-row checkboxflex">
+                <input type="checkbox" id="tos" name="tos" required>
+                <label for="tos" class="tostext">Accetto i termini e le condizioni</label><br>
+              </div>
+              <input type="submit" value="Invia" class="btn custombutton flex-end submitreviewbtn">
             </form>
           </div>
         </div>
