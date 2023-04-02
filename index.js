@@ -2,15 +2,20 @@ const express = require('express')
 const app = express()
 const oneday = 1000 * 60 * 60 * 24
 const session = require('express-session')
+var FileStore = require('session-file-store')(session);
 const path = require('path')
-
 
 app.use(session({
     secret: "IlCorpoNazionaleDeiVigiliDelFuocoSalviamLaVitaAgliAltriIlRestoContaPocoIlPompierePauraNonNeHa",
     saveUninitialized: true,
     cookie: { maxAge: oneday },
-    resave: false
+    resave: false,
+    store: new FileStore(),
 }))
+
+app.use(express('www', { cacheControl: true, setHeaders: function(res, path) { 
+    res.setHeader("Cache-Control","max-age=0,must-revalidate");  
+} }));
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
