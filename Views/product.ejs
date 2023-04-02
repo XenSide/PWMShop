@@ -27,7 +27,7 @@
   <div class="container">
     <div class="row">
       <div class="offset-lg-1 col-lg-4 product-box">
-        <div class="imgcontainer">
+        <div class="imgplaceholder"></div>
           <img src="<%= product.imgpath %>" alt="Immagine prodotto" class="img-fluid">
         </div>
       </div>
@@ -159,6 +159,11 @@
           });
         </script>
         <% }) %>
+        <script>
+          $(".img-fluid").on("load", function() {
+            $(".imgplaceholder").css("display", "none")
+          });
+        </script>
     </div>
   </div>
   <div class="container">
