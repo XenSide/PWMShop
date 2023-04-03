@@ -25,10 +25,13 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
-// app.use('/shop', express.static('public'))
-app.use(express.urlencoded({ extended: true }))
+app.use("/logout", function (req, res, next) {
+  // sets logout to never be cached, would break logout functionality otherwise
+  res.setHeader("Cache-Control", "private, no-cache, no-store, must-revalidate");
+  res.setHeader("Expires", "-1");
+  res.setHeader("Pragma", "no-cache");
+  next();
+});
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
