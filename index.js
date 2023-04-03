@@ -6,7 +6,7 @@ var FileStore = require("session-file-store")(session);
 const compression = require("compression");
 const path = require("path");
 
-app.disable('x-powered-by');
+app.disable("x-powered-by");
 
 app.use(compression());
 
