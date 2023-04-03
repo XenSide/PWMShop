@@ -1,13 +1,10 @@
-const express = require('express')
-const app = express()
-const oneday = 1000 * 60 * 60 * 24
-const session = require('express-session')
-var FileStore = require('session-file-store')(session);
-const path = require('path')
+const compression = require("compression");
+const path = require("path");
 
 app.disable('x-powered-by');
 
-app.use(session({
+app.use(compression());
+
     secret: "IlCorpoNazionaleDeiVigiliDelFuocoSalviamLaVitaAgliAltriIlRestoContaPocoIlPompierePauraNonNeHa",
     saveUninitialized: true,
     cookie: { maxAge: oneday },
