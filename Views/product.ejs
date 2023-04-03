@@ -66,9 +66,6 @@
       <% let cont=0; %>
       <% let length=reviews.length %>
       <% let rows = Math.round(length/2) %>
-      <script>
-        var maxheigth = 0
-      </script>
       <% reviews.forEach(function(review, index){ %>
       <% cont++%>
       <% let row=Math.round((cont)/2); %>
@@ -130,36 +127,8 @@
                 <%= review.corpo%>
               </span>
           </div>
-          <script>
-            function heightgetter(index) {
-              var thisboxheight = $(`#box${index}`).outerHeight()
-              if (maxheigth < thisboxheight)
-                maxheigth = thisboxheight
-            }
-            $(window).ready(function() {
-              heightgetter("<%= index %>")
-            });
-            $(window).on('resize', function() {
-              heightgetter("<%= index %>")
-            });
-          </script>
         </div>
         <% }); %>
-        <% reviews.forEach((review, index)=>{ %>
-        <script>
-          $(document).ready(function() {
-            $("#box<%= index %>").css("min-height", maxheigth)
-          });
-          $(window).on('resize', function() {
-            $("#box<%= index %>").css("min-height", maxheigth)
-          });
-        </script>
-        <% }) %>
-        <script>
-          $(window).on("load", function() {
-            $(".imgplaceholder").css("display", "none")
-          });
-        </script>
       </div>
     </div>
     <div class="container">
