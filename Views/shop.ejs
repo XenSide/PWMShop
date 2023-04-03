@@ -5,69 +5,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Shop</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="/assets/css/styleprodotto.css">
-  <link rel="stylesheet" href="/assets/css/mediaqueries.css">
+  <link rel="stylesheet" href="/assets/css/mediaqueries.css?v2.1.3">
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar custom-align">
-    <div class="container container-navbar">
-
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+    <div class="container-fluid padded">
       <a class="navbar-brand" href="/shop">Shop</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse custom-align" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <a class="nav-link disabled nome" href="#" tabindex="-1" aria-disabled="true">
-          <%= nome%>
-        </a>
-        <a href="/logout"><button class="btn btn-outline-danger my-2 my-sm-0">logout</button></a>
-      </div>
+      <form class="d-flex">
+        <div class="nome"><%= nome %></div>
+        <button class="btn btn-outline-danger" type="submit">Logout</button>
+      </form>
+    </div>
     </div>
   </nav>
-  <div class="product-container">
-    <div class="container">
-      <div class="d-flex flex-row justify-content-center flex-wrap">
-        <% products.forEach(function(product) { %>
-        <div class="col-xs-1 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-          <div class="productCard overflow-hidden">
-            <img src="<%= product.smallimgpath +"?"+ performance.now() %>" alt="Immagine prodotto">
-            <a href="/shop/<%= product.id %>">
-              <h1>
-                <% if(product.name.length > 25) { %>
-                <%= product.name.substring(0,23) +  "..." %>
-                <% } else { %>
-                <%= product.name %>
-                <% } %>
-              </h1>
-            </a>
-            </a>
-            <p class="description">
-              <% if(product.description.length > 100) { %>
-              <%= product.description.substring(0,97) + "..." %>
+  <div class="container no-t-pad mb-5">
+    <div class="flex-row row justify-content-center">
+      <script>
+        var maxheigth = 0
+      </script>
+      <% products.forEach(function(product, index) { %>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-4 gy-5">
+        <div class="productCard" id="productCard<%= index %>">
+          <img src="<%= product.smallimgpath%>?<%= performance.now() %> alt=" Immagine prodotto">
+          <a href="/shop/<%= product.id %>">
+            <h1>
+              <% if(product.name.length > 25) { %>
+              <%= product.name.substring(0,23) +  "..." %>
               <% } else { %>
-                <%= product.description %>
+              <%= product.name %>
               <% } %>
-            </p>
-            <div class="purchaseInfo">
-              <div class="price">
-                <%= product.price%>
-              </div>
-
-              <a href="/shop/<%= product.id %>">
-                <button class="btn custombutton float-right detailButton">Dettagli</button>
-              </a>
+            </h1>
+          </a>
+          </a>
+          <p class="description">
+            <% if(product.description.length > 201) { %>
+            <%= product.description.substring(0,204) +  "..." %>
+            <% } else { %>
+            <%= product.description %>
+            <% } %>
+          </p>
+          <div class="purchaseInfo mt-auto pb-2">
+            <div class="price">
+              <%= product.price%>
             </div>
-
+            <a href="/shop/<%= product.id %>">
+              <button class="btn custombutton float-right detailButton" type="button">Dettagli</button>
+            </a>
           </div>
         </div>
-        <% }); %>
       </div>
+      <% }); %>
     </div>
   </div>
