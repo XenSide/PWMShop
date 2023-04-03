@@ -8,14 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/css/styleprodotto.css?v1.3">
-  <link rel="stylesheet" href="/assets/css/mediaqueries.css">
+  <link rel="stylesheet" href="/assets/css/styleprodotto.css?v1.7">
+  <link rel="stylesheet" href="/assets/css/mediaqueries.css?v3">
 
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
-    <div class="container-fluid">
+    <div class="container-fluid padded">
       <a class="navbar-brand" href="/shop">Shop</a>
       <form class="d-flex">
         <div class="nome"><%= nome %></div>
@@ -26,11 +26,11 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="offset-lg-1 col-lg-4 product-box">
+      <div class="offset-lg-1 offset-xl-1 col-md-12 col-lg-5 col-xl-4 product-box aligned">
         <div class="imgplaceholder"></div>
         <img src="<%= product.imgpath %>" alt="Immagine prodotto" class="img-fluid">
       </div>
-      <div class="offset-lg-1 col-lg-5 product-box">
+      <div class="offset-lg-1 col-lg-4 col-xl-5 product-box">
         <div class="productname">
           <%= product.name %>
         </div>
@@ -132,12 +132,11 @@
           </div>
           <script>
             function heightgetter(index) {
-              console.log("running heightgetter", "maxheigth", maxheigth, `box${index}:`, $(`#box${index}`).outerHeight())
               var thisboxheight = $(`#box${index}`).outerHeight()
               if (maxheigth < thisboxheight)
                 maxheigth = thisboxheight
             }
-            $(document).ready(function() {
+            $(window).ready(function() {
               heightgetter("<%= index %>")
             });
             $(window).on('resize', function() {
@@ -150,16 +149,14 @@
         <script>
           $(document).ready(function() {
             $("#box<%= index %>").css("min-height", maxheigth)
-            console.log("resizing <%= index %> to ", maxheigth, "px")
           });
           $(window).on('resize', function() {
             $("#box<%= index %>").css("min-height", maxheigth)
-            console.log("resizing <%= index %> to ", maxheigth, "px")
           });
         </script>
         <% }) %>
         <script>
-          $(".img-fluid").on("load", function() {
+          $(window).on("load", function() {
             $(".imgplaceholder").css("display", "none")
           });
         </script>
@@ -169,9 +166,9 @@
       <div class="row">
         <div class="offset-lg-1 col-lg-10 col-md-12">
           <div class="writereviewbox">
-            <div class="offset-1 col-10 offset-lg-1 offset-md-1 offset-sm-1 col-md-5 col-sm-10 col-lg-4 writereviewtext">
+            <div class="offset-1 col-10 offset-lg-1 offset-md-1 offset-sm-1 col-sm-10 col-lg-4 writereviewtext">
               <h1>SCRIVI UNA RECENSIONE</h1>
-              <p>Lasciare una recensione aiuta gli altri clienti a prendere decisioni informate sui loro acquisti. Condividendo le tue esperienze oneste con il prodotto o il servizio, puoi fornire preziose informazioni che possono aiutare gli altri a fare la scelta giusta. Le recensioni aiutano anche le aziende a migliorare le loro offerte e il servizio clienti. Quindi, condividi i tuoi pensieri e aiuta gli altri a prendere la migliore decisione per le loro esigenze.<br><br>In altre parole, quando lasci una recensione, non solo stai aiutando gli altri clienti a fare scelte migliori ma anche aiutando le aziende a migliorare i loro prodotti.</p>
+              <p>Lasciare una recensione aiuta gli altri clienti a prendere decisioni informate sui loro acquisti. Condividendo le tue esperienze oneste con il prodotto o il servizio, puoi fornire preziose informazioni che possono aiutare gli altri a fare la scelta giusta. Le recensioni aiutano anche le aziende a migliorare le loro offerte e il servizio clienti. Quindi, condividi i tuoi pensieri e aiuta gli altri a prendere la migliore decisione per le loro esigenze.<br>In altre parole, quando lasci una recensione, non solo stai aiutando gli altri clienti a fare scelte migliori ma anche aiutando le aziende a migliorare i loro prodotti.</p>
             </div>
             <div class="offset-lg-1 offset-1 offset-sm-1 col-10 col-sm-10 col-lg-5 writereviewform">
               <div class="writereviewformuser d-flex justify-content-between">
@@ -187,7 +184,7 @@
                   <input type="checkbox" id="tos" name="tos" required>
                   <label for="tos" class="tostext">Accetto i termini e le condizioni</label><br>
                 </div>
-                <input type="submit" value="Invia" class="btn custombutton flex-end submitreviewbtn">
+                <input type="submit" value="Invia" class="btn custombutton padded flex-end">
               </form>
             </div>
           </div>
