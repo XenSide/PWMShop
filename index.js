@@ -11,13 +11,13 @@ app.disable("x-powered-by");
 app.use(compression());
 
 app.use(
-  session({
-    secret: "IlCorpoNazionaleDeiVigiliDelFuocoSalviamLaVitaAgliAltriIlRestoContaPocoIlPompierePauraNonNeHa",
-    saveUninitialized: true,
-    cookie: { maxAge: oneday },
-    resave: false,
-    store: new FileStore(),
-  })
+    session({
+        secret: "IlCorpoNazionaleDeiVigiliDelFuocoSalviamLaVitaAgliAltriIlRestoContaPocoIlPompierePauraNonNeHa",
+        saveUninitialized: true,
+        cookie: { maxAge: oneday },
+        resave: false,
+        store: new FileStore(),
+    })
 );
 
 app.use(function (req, res, next) {

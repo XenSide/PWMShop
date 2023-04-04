@@ -1,414 +1,407 @@
-       * {
-           font-family: 'Montserrat', sans-serif;
-           caret-color: transparent;
-       }
-
-       .body {
-           box-sizing: border-box;
-           text-align: center;
-       }
-
-       .body>* {
-           font-family: Montserrat;
-       }
-       .links>*{
-              text-decoration: none;
-              color: #212529;
-       }
-       .navbar {
-           height: 9rem;
-           margin-bottom: auto;
-           padding: 0 auto;
-       }
-
-       form.d-flex {
-           align-items: baseline;
-       }
-
-       .container {
-           padding-top: 4rem;
-           overflow-wrap: break-word;
-       }
-
-       .container-navbar {
-           padding: 0;
-       }
-
-       .product-box {
-           margin-top: 2rem;
-
-       }
-
-       .aligned {
-           display: flex;
-           align-items: center;
-           justify-content: center;
-       }
-
-       .productname {
-           font-size: 2rem;
-           font-weight: bold;
-           color: #212529;
-           overflow-wrap: break-word;
-       }
-
-       .custombutton {
-           background-color: white;
-           color: #212529;
-           border: solid 2px #212529;
-       }
-
-       .custombutton:hover {
-           background-color: #212529;
-           color: white;
-           border: solid 2px #212529;
-       }
-
-       .bg-dark {
-           background-color: #212529 !important;
-       }
-
-       .product-box .disabled {
-           background-color: #212529;
-           color: white;
-           border: solid 2px #212529;
-           text-decoration: line-through;
-       }
-
-       .price {
-           margin-top: 2rem;
-           font-size: 2rem;
-           font-weight: bold;
-           color: #212529;
-       }
-
-       .description {
-           margin-top: 1.5rem;
-           font-size: 0.9rem;
-       }
-
-       .circle {
-           width: 10px;
-           height: 10px;
-           border-radius: 50px;
-           font-size: 20px;
-           color: #fff;
-           line-height: 100px;
-           background: green;
-           display: inline-block;
-       }
-
-       .UserIcon {
-           background: #212529;
-           color: white;
-           width: 50px;
-           height: 50px;
-           border-style: solid;
-           border-radius: 50%;
-           display: inline-flex;
-           align-items: center;
-           justify-content: center;
-           margin-right: 1.2rem;
-           margin-bottom: 1.50rem;
-       }
-
-       .reviewName {
-           display: flex;
-           font-size: 1rem;
-           font-weight: bold;
-           margin-bottom: 1.50rem;
-       }
-
-       .reviewH1 {
-           font-weight: bold;
-           font-size: 1.5rem;
-           font-weight: 0;
-       }
-
-
-       .reviewBody {
-           overflow-wrap: break-word;
-           display: flex;
-           font-size: 0.85rem;
-           font-weight: 400;
-           margin-top: 1.2rem;
-       }
-
-       .reviewTitle {
-           font-size: 0.95rem;
-           font-weight: bold;
-       }
-
-       .reviewcontainer {
-           height: 100%;
-       }
-
-       .navbar .nome {
-           color: white;
-           opacity: 0.8;
-           align-self: baseline;
-           margin-right: 1rem;
-       }
-
-       .navbar .btn {
-           align-self: baseline;
-       }
-
-       .navbar .d-flex {
-           flex-wrap: wrap;
-       }
-
-       .container.no-t-pad {
-           padding-top: 0;
-       }
-
-       .productCard {
-           box-sizing: border-box;
-           display: flex;
-           flex-direction: column;
-           height: 100%;
-           border: 1px solid rgba(0, 0, 0, .125);
-           border-radius: 0.5rem;
-       }
-
-       .productCard img {
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        height: auto;
-        width: 100%;
-    }
-
-       .productCard h1 {
-           text-align: left;
-           margin: 1rem 0.5rem 0 0.5rem;
-           font-size: 1rem;
-           font-weight: bold;
-       }
-
-       .productCard p {
-           font-size: 0.7rem;
-           margin: 1rem 0.5rem 0 0.5rem;
-       }
-
-       .productCard .price {
-           margin: 1rem 0.5rem 0 0.5rem;
-           font-size: 1rem;
-           display: inline-block;
-           flex-grow: 2;
-           line-height: 2.4rem;
-       }
-
-       .productCard .detailButton {
-           margin: 1rem 0.5rem 0 0.5rem;
-           flex-grow: 1;
-
-       }
-
-       .productCard a {
-           display: flex;
-           text-decoration: inherit;
-           color: inherit;
-       }
-
-       .purchaseInfo {
-           align-items: baseline;
-           display: flex;
-           width: inherit;
-           flex-direction: row;
-       }
-
-       .reviewbox {
-           overflow: hidden;
-           display: flex;
-           flex-direction: column;
-           padding: 2rem 3.5rem 2.5rem 3.5rem;
-           border: solid 2px #212529;
-           margin: 0;
-           height: 100%;
-       }
-
-       .upper {
-           border-radius: 0.5rem 0.5rem 0 0;
-       }
-
-       .lower {
-           border-bottom-left-radius: 0.5rem;
-           border-bottom-right-radius: 0.5rem;
-       }
-
-       .black {
-           background-color: #212529;
-           color: white;
-       }
-
-       .black .UserIcon {
-           background: white;
-           color: #212529;
-           border-radius: 50%;
-       }
-
-       .UserInfo {
-           display: flex;
-           flex-direction: row;
-           align-items: center;
-       }
-
-       .reviewrow {
-           margin-top: 3rem;
-           margin-bottom: 3rem;
-       }
-
-       .writereviewbox {
-           overflow-wrap: break-word;
-           display: flex;
-           padding-top: 2.5rem;
-           padding-bottom: 2.5rem;
-           border: solid 2px #212529;
-           min-height: 250px;
-           border-radius: 0.6rem;
-           margin-bottom: 6rem;
-           flex-wrap: wrap;
-       }
-
-       .writereviewtext {
-           margin-top: 1.2rem;
-           margin-bottom: 1.2rem;
-           display: flex;
-           flex-direction: column;
-       }
-
-       .writereviewtext p {
-           margin-top: 1.8rem;
-           font-size: 0.8rem;
-       }
-
-       .writereviewtext h1 {
-           font-size: 1rem;
-           font-weight: bold;
-       }
-
-       .writereviewform {
-           margin-top: 1.2rem;
-           flex-direction: column;
-
-       }
-
-       .writereviewform form {
-           margin-top: 1.2rem;
-       }
-
-       .writereviewform .title {
-           width: 100%;
-           padding-left: 0.6rem;
-           border: 0;
-           background-color: #D9D9D9;
-       }
-
-       .reviewform {
-           display: flex;
-           flex-flow: column;
-
-       }
-
-       .tostext {
-           margin-left: 0.6rem;
-           font-size: 0.9rem;
-       }
-
-       .flex-end {
-           align-self: flex-end;
-       }
-
-       .submitreviewbtn {
-           margin-top: 1.2rem;
-           width: 9rem;
-           height: 3rem;
-       }
-
-       .checkboxflex {
-           display: inline-flex;
-           flex-wrap: wrap;
-           margin-top: 0.6rem;
-           align-items: baseline;
-       }
-
-       input#tos {
-           align-self: center;
-       }
-
-       .writereviewform textarea {
-           margin-top: 1.2rem;
-           height: 9rem;
-           padding-bottom: 6.6rem;
-           flex-wrap: wrap;
-           width: 100%;
-           height: 9rem;
-           padding: 0.6rem;
-           border: 0;
-           background-color: #D9D9D9;
-       }
-
-       ::placeholder {
-           font-size: 0.9rem;
-           /* Chrome, Firefox, Opera, Safari 10.1+ */
-           color: rgb(75, 75, 75);
-           opacity: 1;
-           /* Firefox */
-       }
-
-       :-ms-input-placeholder {
-           /* Internet Explorer 10-11 */
-           color: rgb(75, 75, 75);
-           ;
-       }
-
-       ::-ms-input-placeholder {
-           /* Microsoft Edge */
-           color: rgb(75, 75, 75);
-           ;
-       }
-
-       .writereviewform h1 {
-           font-size: 0.8rem;
-           font-weight: bold;
-       }
-
-       .writereviewformuser {
-           flex-direction: row;
-           align-items: baseline;
-           font-size: 1rem;
-       }
-
-       .writereviewformuser p {
-           /* white-space: nowrap; */
-           font-size: 0.8rem;
-       }
-
-       .writereviewformuser a:hover {
-           text-decoration: none;
-       }
-
-       input {
-           caret-color: black;
-       }
-
-       textarea {
-           caret-color: black;
-       }
-
-       .imgplaceholder {
-           width: 416px;
-           height: 416px;
-       }
-
-       .padded {
-           padding: 0 6rem;
-       }
-
-       label.tostext {
-           font-size: 0.8rem;
-       }
-
-       .reviewform .padded {
-           padding: 0.3rem 1.5rem;
-       }
+* {
+    font-family: "Montserrat", sans-serif;
+    caret-color: transparent;
+}
+
+.body {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.body > * {
+    font-family: Montserrat;
+}
+.links > * {
+    text-decoration: none;
+    color: #212529;
+}
+.navbar {
+    height: 9rem;
+    margin-bottom: auto;
+    padding: 0 auto;
+}
+
+form.d-flex {
+    align-items: baseline;
+}
+
+.container {
+    padding-top: 4rem;
+    overflow-wrap: break-word;
+}
+
+.container-navbar {
+    padding: 0;
+}
+
+.product-box {
+    margin-top: 2rem;
+}
+
+.aligned {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productname {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #212529;
+    overflow-wrap: break-word;
+}
+
+.custombutton {
+    background-color: white;
+    color: #212529;
+    border: solid 2px #212529;
+}
+
+.custombutton:hover {
+    background-color: #212529;
+    color: white;
+    border: solid 2px #212529;
+}
+
+.bg-dark {
+    background-color: #212529 !important;
+}
+
+.product-box .disabled {
+    background-color: #212529;
+    color: white;
+    border: solid 2px #212529;
+    text-decoration: line-through;
+}
+
+.price {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #212529;
+}
+
+.description {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 100px;
+    background: green;
+    display: inline-block;
+}
+
+.UserIcon {
+    background: #212529;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.reviewName {
+    display: flex;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.reviewH1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 0;
+}
+
+.reviewBody {
+    overflow-wrap: break-word;
+    display: flex;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-top: 1.2rem;
+}
+
+.reviewTitle {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.reviewcontainer {
+    height: 100%;
+}
+
+.navbar .nome {
+    color: white;
+    opacity: 0.8;
+    align-self: baseline;
+    margin-right: 1rem;
+}
+
+.navbar .btn {
+    align-self: baseline;
+}
+
+.navbar .d-flex {
+    flex-wrap: wrap;
+}
+
+.container.no-t-pad {
+    padding-top: 0;
+}
+
+.productCard {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.5rem;
+}
+
+.productCard img {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    height: auto;
+    width: 100%;
+}
+
+.productCard h1 {
+    text-align: left;
+    margin: 1rem 0.5rem 0 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.productCard p {
+    font-size: 0.7rem;
+    margin: 1rem 0.5rem 0 0.5rem;
+}
+
+.productCard .price {
+    margin: 1rem 0.5rem 0 0.5rem;
+    font-size: 1rem;
+    display: inline-block;
+    flex-grow: 2;
+    line-height: 2.4rem;
+}
+
+.productCard .detailButton {
+    margin: 1rem 0.5rem 0 0.5rem;
+    flex-grow: 1;
+}
+
+.productCard a {
+    display: flex;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.purchaseInfo {
+    align-items: baseline;
+    display: flex;
+    width: inherit;
+    flex-direction: row;
+}
+
+.reviewbox {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3.5rem 2.5rem 3.5rem;
+    border: solid 2px #212529;
+    margin: 0;
+    height: 100%;
+}
+
+.upper {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.lower {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.black {
+    background-color: #212529;
+    color: white;
+}
+
+.black .UserIcon {
+    background: white;
+    color: #212529;
+    border-radius: 50%;
+}
+
+.UserInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.reviewrow {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.writereviewbox {
+    overflow-wrap: break-word;
+    display: flex;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    border: solid 2px #212529;
+    min-height: 250px;
+    border-radius: 0.6rem;
+    margin-bottom: 6rem;
+    flex-wrap: wrap;
+}
+
+.writereviewtext {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.writereviewtext p {
+    margin-top: 1.8rem;
+    font-size: 0.8rem;
+}
+
+.writereviewtext h1 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.writereviewform {
+    margin-top: 1.2rem;
+    flex-direction: column;
+}
+
+.writereviewform form {
+    margin-top: 1.2rem;
+}
+
+.writereviewform .title {
+    width: 100%;
+    padding-left: 0.6rem;
+    border: 0;
+    background-color: #d9d9d9;
+}
+
+.reviewform {
+    display: flex;
+    flex-flow: column;
+}
+
+.tostext {
+    margin-left: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.flex-end {
+    align-self: flex-end;
+}
+
+.submitreviewbtn {
+    margin-top: 1.2rem;
+    width: 9rem;
+    height: 3rem;
+}
+
+.checkboxflex {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+    align-items: baseline;
+}
+
+input#tos {
+    align-self: center;
+}
+
+.writereviewform textarea {
+    margin-top: 1.2rem;
+    height: 9rem;
+    padding-bottom: 6.6rem;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 9rem !important;
+    padding: 0.6rem;
+    border: 0;
+    background-color: #d9d9d9;
+}
+
+::placeholder {
+    font-size: 0.9rem;
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(75, 75, 75);
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(75, 75, 75);
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgb(75, 75, 75);
+}
+
+.writereviewform h1 {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.writereviewformuser {
+    flex-direction: row;
+    align-items: baseline;
+    font-size: 1rem;
+}
+
+.writereviewformuser p {
+    /* white-space: nowrap; */
+    font-size: 0.8rem;
+}
+
+.writereviewformuser a:hover {
+    text-decoration: none;
+}
+
+input {
+    caret-color: black;
+}
+
+textarea {
+    caret-color: black;
+}
+
+.imgplaceholder {
+    width: 416px;
+    height: 416px;
+}
+
+.padded {
+    padding: 0 6rem;
+}
+
+label.tostext {
+    font-size: 0.8rem;
+}
+
+.reviewform .padded {
+    padding: 0.3rem 1.5rem;
+}
