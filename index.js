@@ -21,17 +21,18 @@ app.use(
 );
 
 app.use(function (req, res, next) {
-  res.setHeader("Cache-Control", `max-age=${oneday},immutable`);
-  next();
+    // res.setHeader("Cache-Control", `max-age=${oneday},must-revalidate`); // sets all pages to be cached for 1 day, unusable for pages that use Auth middleware
+    res.setHeader("Cache-Control", `max-age=0,must-revalidate`);
+    next();
 });
 
-app.use("/logout", function (req, res, next) {
-  // sets logout to never be cached, would break logout functionality otherwise
-  res.setHeader("Cache-Control", "private, no-cache, no-store, must-revalidate");
-  res.setHeader("Expires", "-1");
-  res.setHeader("Pragma", "no-cache");
-  next();
-});
+// app.use(["/logout", "/login"], function (req, res, next) {
+//     // sets logout to never be cached, would break logout functionality otherwise
+//     res.setHeader("Cache-Control", "private, no-cache, no-store, must-revalidate");
+//     res.setHeader("Expires", "-1");
+//     res.setHeader("Pragma", "no-cache");
+//     next();
+// });
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
