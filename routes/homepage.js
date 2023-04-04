@@ -1,17 +1,12 @@
-const express = require('express')
-const router = express.Router()
-const login = require('../middlewares/login')
+const express = require("express");
+const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
     if (req.session.userid) {
-        res.status(200).redirect('/shop')
+        res.redirect("/shop");
     } else {
-        res.render('index.ejs', { name: 'Pippo' })
+        res.redirect("/login");
     }
 });
 
-router.post('/', login, (req, res) => {
-    res.status(200).redirect('/shop')
-});
-
-module.exports = router
+module.exports = router;

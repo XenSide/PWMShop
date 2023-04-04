@@ -38,11 +38,13 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 const homepage = require("./routes/homepage");
+const login = require("./routes/login");
 const signup = require("./routes/signup");
 const shop = require("./routes/shop");
 const logout = require("./routes/logout");
 
 app.use("/", homepage);
+app.use("/login", login);
 app.use("/signup", signup);
 app.use("/shop", shop);
 app.use("/logout", logout);
