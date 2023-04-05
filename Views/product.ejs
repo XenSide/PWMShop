@@ -1,165 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Shop</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/assets/css/styleprodotto.css?v1.7.0" />
+        <link rel="stylesheet" href="/assets/css/mediaqueries.css?v3.0.1" />
+    </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Shop</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/css/styleprodotto.css?v1.7.0">
-  <link rel="stylesheet" href="/assets/css/mediaqueries.css?v3.0.1">
-
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
-    <div class="container-fluid padded">
-      <a class="navbar-brand" href="/shop">Shop</a>
-      <form class="d-flex">
-        <div class="nome"><%= nome %></div>
-        <a href="/logout">
-          <button class="btn btn-outline-danger" type="button">Logout</button>
-        </a>
-      </form>
-    </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="offset-lg-1 offset-xl-1 col-md-12 col-lg-5 col-xl-4 product-box aligned">
-        <img src="<%= product.imgpath %>" alt="Immagine prodotto" height="512" width="512"class="img-fluid">
-      </div>
-      <div class="offset-lg-1 col-lg-4 col-xl-5 product-box">
-        <div class="productname">
-          <%= product.name %>
-        </div>
-        <p class="description">
-          <%= product.description%>
-        </p>
-        <div class="price">
-          <% if(product.stock==0){ %>
-          <span class="badge text-bg-danger">Non disponibile</span>
-          <% } %><br>
-          <%= product.price%>
-        </div>
-        <% if(product.stock!=0){ %>
-        <button class="btn custombutton float-end" type="button">Acquista</button>
-        <% }else{%>
-        <button class="btn custombutton float-end disabled" type="button" disabled>Acquista</button>
-        <% } %>
-      </div>
-    </div>
-  </div>
-  <div class="container reviewcontainer">
-    <div class="row">
-      <div class="offset-lg-1 col-lg-4">
-        <h1 class="reviewH1" id="reviews">REVIEWS</h1>
-      </div>
-    </div>
-    <div class="row reviewrow">
-      <% if (reviews.length==0) { %>
-      <div class="offset-lg-1 col-lg-5">
-        <span>Nessuna recensione disponibile</span>
-      </div>
-      <% } %>
-      <% let cont=0; %>
-      <% let length=reviews.length %>
-      <% let rows = Math.round(length/2) %>
-      <% reviews.forEach(function(review, index){ %>
-      <% cont++%>
-      <% let row=Math.round((cont)/2); %>
-      <% function isLowerClass(row, rows, length, cont)
-      {
-        // Aggiungi la classe 'lower' se si verifica una delle seguenti condizioni:
-        // - C'è solo una riga OR
-        // - La riga corrente è l'ultima OR
-        // - La riga corrente è la penultima e il numero di elementi totali è dispari e siamo nell'elemento destro (elemento destro che non ha niente sotto)
-        // - Il numero di elementi è 3 e il contatore è 2
-        if ( rows==1 || row==rows || rows-1==row && length%2!=0 && cont%2==0){
-          return "lower";
-        }else{
-          return "";
-        }
-      }
-      %>
-      <% if(cont%2==1) {%>
-      <div class="offset-lg-1 col-lg-5">
-        <% }else{ %>
-        <div class="col-lg-5">
-          <% } %>
-          <!-- In queste righe vengono assegnate dinamicamente upper, lower e black in base ad alcune condizioni  -->
-          <div class="flex-container reviewbox d-none d-lg-block <%= (row==1) ? 'upper' : ''%> <%= isLowerClass(row, rows, length, cont) %> <%= (row%2==cont%2) ? "black" : ""%>" id="box<%= index %>">
-            <!---->
-            <div class="UserInfo">
-              <div class="UserIcon">
-                <div class="UserLetter">
-                  <%= review.username.charAt(0);%>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+            <div class="container-fluid padded">
+                <a class="navbar-brand" href="/shop">Shop</a>
+                <form class="d-flex">
+                    <div class="nome"><%= nome %></div>
+                    <a href="/logout">
+                        <button class="btn btn-outline-danger" type="button">Logout</button>
+                    </a>
+                </form>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-1 offset-xl-1 col-md-12 col-lg-5 col-xl-4 product-box aligned">
+                    <img
+                        src="<%= product.imgpath %>"
+                        alt="Immagine prodotto"
+                        height="512"
+                        width="512"
+                        class="img-fluid"
+                    />
                 </div>
-              </div>
-              <span class="reviewName">
-                <%= review.username%>
-                <br>
-              </span>
-            </div>
-            <span class="reviewTitle">
-              <%= review.titolo%>
-              <span class="reviewBody">
-                <%= review.corpo%>
-              </span>
-          </div>
-          <div class="flex-container reviewbox d-lg-none ms-auto <%= (cont==1) ? 'upper' : ''%> <%= (cont==length) ? "lower" : ""%> <%= (cont%2==0) ? "black" : ""%>" id="boxsm<%= index %>">
-            <!---->
-            <div class="UserInfo">
-              <div class="UserIcon">
-                <div class="UserLetter">
-                  <%= review.username.charAt(0);%>
+                <div class="offset-lg-1 col-lg-4 col-xl-5 product-box">
+                    <div class="productname"><%= product.name %></div>
+                    <p class="description"><%= product.description%></p>
+                    <div class="price">
+                        <% if(product.stock==0){ %>
+                        <span class="badge text-bg-danger">Non disponibile</span>
+                        <% } %><br />
+                        <%= product.price%>
+                    </div>
+                    <% if(product.stock!=0){ %>
+                    <button class="btn custombutton float-end" type="button">Acquista</button>
+                    <% }else{%>
+                    <button class="btn custombutton float-end disabled" type="button" disabled>
+                        Acquista
+                    </button>
+                    <% } %>
                 </div>
-              </div>
-              <span class="reviewName">
-                <%= review.username%>
-                <br>
-              </span>
             </div>
-            <span class="reviewTitle">
-              <%= review.titolo%>
-              <span class="reviewBody">
-                <%= review.corpo%>
-              </span>
-          </div>
         </div>
-        <% }); %>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="offset-lg-1 col-lg-10 col-md-12">
-          <div class="writereviewbox">
-            <div class="offset-1 col-10 offset-lg-1 offset-md-1 offset-sm-1 col-sm-10 col-lg-4 writereviewtext">
-              <h1>SCRIVI UNA RECENSIONE</h1>
-              <p>Lasciare una recensione aiuta gli altri clienti a prendere decisioni informate sui loro acquisti. Condividendo le tue esperienze oneste con il prodotto o il servizio, puoi fornire preziose informazioni che possono aiutare gli altri a fare la scelta giusta. Le recensioni aiutano anche le aziende a migliorare le loro offerte e il servizio clienti. Quindi, condividi i tuoi pensieri e aiuta gli altri a prendere la migliore decisione per le loro esigenze.<br>In altre parole, quando lasci una recensione, non solo stai aiutando gli altri clienti a fare scelte migliori ma anche aiutando le aziende a migliorare i loro prodotti.</p>
-            </div>
-            <div class="offset-lg-1 offset-1 offset-sm-1 col-10 col-sm-10 col-lg-5 writereviewform">
-              <div class="writereviewformuser d-flex justify-content-between">
-                <h1><%= nome %></h1>
-                <p class="">Non sei tu? <a href="/logout">Effettua il logout.</a></p>
-              </div>
-              <form action="/shop/review/add" method="post" class="reviewform">
-                <input type="hidden" name="idprodotto" value="<%= product.id %>" required>
-                <input type="hidden" name="username" value="<%= nome %>" required>
-                <input class="title" type="text" id="titolo" name="titolo" placeholder="Dai un titolo alla tua recensione" required>
-                <textarea name="corpo" id="corpo" placeholder="Scrivi qui la tua recensione, ricorda di essere cortese!" maxlength="301" required></textarea>
-                <div class="flex-row checkboxflex">
-                  <input type="checkbox" id="tos" name="tos" required>
-                  <label for="tos" class="tostext">Accetto i termini e le condizioni</label><br>
+        <div class="container reviewcontainer">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-4">
+                    <h1 class="reviewH1" id="reviews">REVIEWS</h1>
                 </div>
-                <input type="submit" value="Invia" class="btn custombutton padded flex-end">
-              </form>
             </div>
-          </div>
+            <div class="row reviewrow">
+                <% if (reviews.length==0) { %>
+                <div class="offset-lg-1 col-lg-5">
+                    <span>Nessuna recensione disponibile</span>
+                </div>
+                <% } %> <% let cont=0; %> <% let length=reviews.length %> <% let rows = Math.round(length/2)%>
+                <% reviews.forEach(function(review, index){ %> <% cont++%> <% let row=Math.round((cont)/2); %>
+                <!-- prettier-ignore -->
+                <% function isLowerClass(row, rows, length, cont) {
+                  /* Aggiungi la classe 'lower' se si verifica una delle seguenti condizioni: 
+                  - C'è solo una riga OR 
+                  - La riga corrente è l'ultima OR
+                  - La riga corrente è la penultima e il numero di elementi totali è dispari e siamo nell'elemento destro (elemento destro che non ha niente sotto)
+                  - Il numero di elementi è 3 e il contatore è 2*/ 
+                  if ( rows==1 || row==rows || rows-1==row && length%2!=0 && cont%2==0){
+                      return "lower";
+                    }else{
+                      return "";
+                    } 
+                } %>
+                <% if(cont%2==1) {%>
+                <div class="offset-lg-1 col-lg-5">
+                    <% }else{ %>
+                    <div class="col-lg-5">
+                        <% } %>
+                        <!-- In queste righe vengono assegnate dinamicamente upper, lower e black in base ad alcune condizioni  -->
+                        <div class="flex-container reviewbox d-none d-lg-block <%= (row==1) ? 'upper' : ''%>
+                        <%= isLowerClass(row, rows, length, cont) %> <%= (row%2==cont%2) ? "black" : ""%>"
+                        id="box<%= index %>">
+                        <!---->
+                        <div class="UserInfo">
+                            <div class="UserIcon">
+                                <div class="UserLetter"><%= review.username.charAt(0);%></div>
+                            </div>
+                            <span class="reviewName">
+                                <%= review.username%>
+                                <br />
+                            </span>
+                        </div>
+                        <span class="reviewTitle"> <%= review.titolo%> </span>
+                        <span class="reviewBody"> <%= review.corpo%> </span>
+                    </div>
+                    <div class="flex-container reviewbox d-lg-none ms-auto <%= (cont==1) ? 'upper' : ''%> <%=
+                    (cont==length) ? "lower" : ""%> <%= (cont%2==0) ? "black" : ""%>" id="boxsm<%= index %>">
+                    <!---->
+                    <div class="UserInfo">
+                        <div class="UserIcon">
+                            <div class="UserLetter"><%= review.username.charAt(0);%></div>
+                        </div>
+                        <span class="reviewName">
+                            <%= review.username%>
+                            <br />
+                        </span>
+                    </div>
+                    <span class="reviewTitle"> <%= review.titolo%> </span>
+                    <span class="reviewBody"> <%= review.corpo%> </span>
+                </div>
+            </div>
+            <% }); %>
         </div>
-      </div>
-    </div>
-</body>
-
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-1 col-lg-10 col-md-12">
+                    <div class="writereviewbox">
+                        <div
+                            class="offset-1 col-10 offset-lg-1 offset-md-1 offset-sm-1 col-sm-10 col-lg-4 writereviewtext"
+                        >
+                            <h1>SCRIVI UNA RECENSIONE</h1>
+                            <p>
+                                Lasciare una recensione aiuta gli altri clienti a prendere decisioni informate
+                                sui loro acquisti. Condividendo le tue esperienze oneste con il prodotto o il
+                                servizio, puoi fornire preziose informazioni che possono aiutare gli altri a
+                                fare la scelta giusta. Le recensioni aiutano anche le aziende a migliorare le
+                                loro offerte e il servizio clienti. Quindi, condividi i tuoi pensieri e aiuta
+                                gli altri a prendere la migliore decisione per le loro esigenze.<br />In altre
+                                parole, quando lasci una recensione, non solo stai aiutando gli altri clienti
+                                a fare scelte migliori ma anche aiutando le aziende a migliorare i loro
+                                prodotti.
+                            </p>
+                        </div>
+                        <div
+                            class="offset-lg-1 offset-1 offset-sm-1 col-10 col-sm-10 col-lg-5 writereviewform"
+                        >
+                            <div class="writereviewformuser d-flex justify-content-between">
+                                <h1><%= nome %></h1>
+                                <p class="">Non sei tu? <a href="/logout">Effettua il logout.</a></p>
+                            </div>
+                            <form action="/shop/review/add" method="post" class="reviewform">
+                                <input type="hidden" name="idprodotto" value="<%= product.id %>" required />
+                                <input type="hidden" name="username" value="<%= nome %>" required />
+                                <input
+                                    class="title"
+                                    type="text"
+                                    id="titolo"
+                                    name="titolo"
+                                    placeholder="Dai un titolo alla tua recensione"
+                                    required
+                                />
+                                <textarea
+                                    name="corpo"
+                                    id="corpo"
+                                    placeholder="Scrivi qui la tua recensione, ricorda di essere cortese!"
+                                    maxlength="301"
+                                    required
+                                ></textarea>
+                                <div class="flex-row checkboxflex">
+                                    <input type="checkbox" id="tos" name="tos" required />
+                                    <label for="tos" class="tostext">Accetto i termini e le condizioni</label
+                                    ><br />
+                                </div>
+                                <input type="submit" value="Invia" class="btn custombutton padded flex-end" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
