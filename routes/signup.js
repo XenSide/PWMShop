@@ -1,13 +1,13 @@
-const express = require('express')
-const router = express.Router()
-const confirmSignUp = require('../middlewares/confirmsignup')
+const express = require("express");
+const router = express.Router();
+const confirmSignUp = require("../middlewares/confirmsignup");
 
-router.get('/', (req, res) => {
-    res.render('signup.ejs')
+router.get("/", (req, res) => {
+    res.render("signup.ejs");
 });
 
-router.post('/', confirmSignUp, (req, res) => {
-    res.status(200).redirect('/')
+router.post("/", confirmSignUp, (req, res) => {
+    res.status(200).redirect("/");
 });
 
-module.exports = router
+module.exports = router;
